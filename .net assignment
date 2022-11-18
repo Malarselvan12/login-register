@@ -74,3 +74,34 @@ namespace ConsoleApp8
         }  
     }  
 }    
+
+
+_____________________________OR_____________________
+
+using System;
+using system.Globalization;
+using system.Text.RegularExpressions;
+
+namespace ConsoleApp1
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            string stringWithDate ="Hdjsh asd2324234jghjsd hjsdg sdhk 12212021 idf32432 32423 d34234jh dfh Time Entry Dates:01/01/2001;Exceptions: All Exceptions ";
+              Match match = Regex.Match(stringwithDate,"@\d(2)\/\d(2)\/\d(4)");
+         string date = match.value;
+          if (!string.IsNullOrEmpty(date))
+            {
+                 var dateTime = DateTime.ParseExact(date, "MM/dd/yyyy",cultureInfo.currentculture);
+                 console.Writetime(dateTIme.ToString());
+             }
+             
+        
+        }
+        
+    }
+}
+
+
+
